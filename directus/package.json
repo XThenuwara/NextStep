@@ -1,0 +1,12 @@
+{
+  "name": "directus-cms",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "snapshot": "npx directus schema snapshot ./snapshots/$(date +%Y-%m-%d_%H-%M-%S-%3N).yaml"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
