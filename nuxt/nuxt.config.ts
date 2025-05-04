@@ -1,3 +1,5 @@
+import tailwindcss from "@tailwindcss/vite";
+
 export default defineNuxtConfig({
 	components: [
 		{ path: '~/components', pathPrefix: false },
@@ -17,12 +19,11 @@ export default defineNuxtConfig({
 		'@nuxt/scripts',
 		'@vueuse/nuxt',
 		'nuxt-security',
-		'@nuxtjs/tailwindcss',
 		'@nuxtjs/color-mode',
 		'shadcn-nuxt',
 		'@nuxt/icon',
-		'@nuxtjs/color-mode',
 		'@nuxtjs/seo',
+		'@nuxt/ui'
 	],
 
 	css: ['~/assets/css/tailwind.css'],
@@ -94,4 +95,9 @@ export default defineNuxtConfig({
 	},
 
 	compatibilityDate: '2025-01-16',
+	vite : {
+		plugins: [
+			tailwindcss()
+		]
+	},
 });

@@ -13,7 +13,4 @@
 
 <script setup>
 import Footer from '../components/Footer.vue';
-
-
-// No additional setup needed as components are auto-imported
 </script>

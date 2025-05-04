@@ -14,5 +14,5 @@
 </template>
 
 <script setup>
-// No additional setup needed for this simple page
+
 </script>
