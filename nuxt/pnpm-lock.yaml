@@ -26,9 +26,6 @@ dependencies:
   '@nuxt/scripts':
     specifier: ^0.11.5
     version: 0.11.5(@unhead/vue@2.0.5)(nuxt@3.16.2)(typescript@5.8.3)(vue@3.5.13)
-  '@nuxtjs/color-mode':
-    specifier: ^3.5.2
-    version: 3.5.2
   '@nuxtjs/seo':
     specifier: 3.0.2
     version: 3.0.2(@unhead/vue@2.0.5)(h3@1.15.1)(unstorage@1.15.0)(vite@6.2.5)(vue@3.5.13)
@@ -100,6 +97,9 @@ devDependencies:
   '@nuxt/devtools':
     specifier: 2.3.2
     version: 2.3.2(vite@6.2.5)(vue@3.5.13)
+  '@nuxtjs/color-mode':
+    specifier: ^3.5.2
+    version: 3.5.2
   '@nuxtjs/eslint-config-typescript':
     specifier: 12.1.0
     version: 12.1.0(eslint@9.24.0)(typescript@5.8.3)
@@ -1621,7 +1621,7 @@ packages:
       semver: 7.7.1
     transitivePeerDependencies:
       - magicast
-    dev: false
+    dev: true
 
   /@nuxtjs/eslint-config-typescript@12.1.0(eslint@9.24.0)(typescript@5.8.3):
     resolution: {integrity: sha512-l2fLouDYwdAvCZEEw7wGxOBj+i8TQcHFu3zMPTLqKuv1qu6WcZIr0uztkbaa8ND1uKZ9YPqKx6UlSOjM4Le69Q==}
@@ -1976,6 +1976,7 @@ packages:
     dependencies:
       is-glob: 4.0.3
       micromatch: 4.0.8
+      napi-wasm: 1.1.3
     dev: false
     bundledDependencies:
       - napi-wasm
@@ -7110,6 +7111,10 @@ packages:
     resolution: {integrity: sha512-GEbrYkbfF7MoNaoh2iGG84Mnf/WZfB0GdGEsM8wz7Expx/LlWf5U8t9nvJKXSp3qr5IsEbK04cBGhol/KwOsWA==}
     dev: false
     optional: true
+
+  /napi-wasm@1.1.3:
+    resolution: {integrity: sha512-h/4nMGsHjZDCYmQVNODIrYACVJ+I9KItbG+0si6W/jSjdA9JbWDoU4LLeMXVcEQGHjttI2tuXqDrbGF7qkUHHg==}
+    dev: false
 
   /natural-compare@1.4.0:
     resolution: {integrity: sha512-OWND8ei3VtNC9h7V60qff3SVobHr996CTwgxubgyQYEpg290h9J0buyECNNJexkFm5sOajh5G116RYA1c8ZMSw==}

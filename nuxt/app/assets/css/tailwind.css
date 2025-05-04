@@ -3,10 +3,10 @@
 @tailwind utilities;
 
 :root {
-	--background-color: #ffffff;
+	--background-color: #dcdcdc;
 	--foreground-color: #42566e;
 	--background-color-muted: color-mix(in srgb, var(--background-color), var(--foreground-color) 10%);
-	--accent-color: #6644ff;
+	--accent-color: #5a5a5a;
 	--background-variant-color: #172940;
 	--accent-color-dark: color-mix(in srgb, var(--accent-color), black 40%);
 	--accent-color-soft: color-mix(in srgb, var(--accent-color), white 20%);
@@ -15,7 +15,7 @@
 }
 
 .dark {
-	--background-color: #0e1a2b;
+	--background-color: #0f0f0f;
 	--foreground-color: #ffffff;
 	--background-color-muted: color-mix(in srgb, var(--background-color), var(--foreground-color) 10%);
 	--background-variant-color: #172940;

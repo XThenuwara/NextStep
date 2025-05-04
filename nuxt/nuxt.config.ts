@@ -18,6 +18,7 @@ export default defineNuxtConfig({
 		'@vueuse/nuxt',
 		'nuxt-security',
 		'@nuxtjs/tailwindcss',
+		'@nuxtjs/color-mode',
 		'shadcn-nuxt',
 		'@nuxt/icon',
 		'@nuxtjs/color-mode',
