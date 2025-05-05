@@ -7,7 +7,7 @@ useHead({
 </script>
 
 <template>
-	<div>
+	<div class="bg-neutral-100 dark:bg-neutral-900">
 		<UApp>
 			<NuxtLayout>
 				<NuxtPage />

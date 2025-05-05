@@ -21,8 +21,6 @@ p {
 	font-family: 'Quicksand', sans-serif;
 }
 
-
-@theme static {
-    --color-background: #ffffff;
+input {
+    @apply bg-neutral-100 dark:bg-neutral-900
 }
-

@@ -26,15 +26,17 @@
 						</div>
 					</div>
 
-					<div class="flex items-center gap-4">
+					<div class="flex items-center gap-2">
 						<ThemeToggle class="transition-transform hover:scale-105" />
+						<ProfileDrawer />
 						<!-- Mobile menu button -->
-						<button
+						<UButton
+							variant="soft"
 							@click="isOpen = !isOpen"
-							class="sm:hidden inline-flex items-center justify-center p-2 rounded-md text-neutral-500 hover:text-neutral-700 hover:bg-neutral-100 dark:text-neutral-400 dark:hover:text-neutral-200 dark:hover:bg-neutral-700/50 transition-colors duration-200"
+							class="sm:hidden aspect-square rounded-full inline-flex items-center justify-center text-neutral-500 hover:text-neutral-700 hover:bg-neutral-100 dark:text-neutral-400 dark:hover:text-neutral-200 dark:hover:bg-neutral-700/50 transition-colors duration-200"
 						>
-							<Icon :name="isOpen ? 'heroicons:x-mark' : 'heroicons:bars-3'" class="h-6 w-6" />
-						</button>
+							<Icon :name="isOpen ? 'heroicons:x-mark' : 'heroicons:bars-3'" class="h-[1.2rem] w-[1.2rem]" />
+						</UButton>
 					</div>
 				</div>
 
@@ -67,7 +69,7 @@ const isOpen = ref(false);
 const navigationLinks = [
 	{ name: 'Home', path: '/' },
 	{ name: 'Jobs', path: '/jobs' },
-	{ name: 'About', path: '/about' },
-	{ name: 'Contact', path: '/contact' },
+	// { name: 'About', path: '/about' },
+	// { name: 'Contact', path: '/contact' },
 ];
 </script>

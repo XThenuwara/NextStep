@@ -11,7 +11,7 @@
 
 		<!-- Search and Filter Section -->
 		<div
-			class="bg-white dark:bg-neutral-800 rounded-xl border border-neutral-200 dark:border-neutral-700 p-4 mb-8"
+			class="bg-white dark:bg-neutral-800 rounded-xl border shadow border-neutral-200 dark:border-neutral-700 p-4 mb-8"
 		>
 			<div class="flex flex-col md:flex-row gap-4">
 				<div class="flex-1">
@@ -54,7 +54,7 @@
 			{{ error.message }}
 		</div>
 
-		<div v-else class="grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
+		<div v-else class="grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
 			<JobCard v-for="job in filteredJobs" :key="job.id" :job="job" />
 		</div>
 	</div>

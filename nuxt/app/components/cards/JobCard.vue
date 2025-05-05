@@ -1,11 +1,11 @@
 <template>
-  <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-sm border border-neutral-200 dark:border-neutral-700 p-6 transition-all hover:shadow-md">
+  <UCard class="transition-all hover:shadow-md">
     <div class="flex justify-between items-start">
       <div>
         <h2 class="text-xl font-semibold text-neutral-900 dark:text-neutral-100 mb-2">
           {{ job.title }}
         </h2>
-        <p class="text-neutral-600 dark:text-neutral-400 mb-4">{{ job.company }}</p>
+        <p class="text-neutral-600 dark:text-neutral-400 mb-4">{{  }}</p>
         <div class="flex flex-wrap gap-2 mb-4">
           <Badge variant="secondary" v-if="job.type">
             {{ job.type }}
@@ -25,16 +25,15 @@
     <p class="text-neutral-600 dark:text-neutral-400 line-clamp-3">
       {{ job.description }}
     </p>
-  </div>
+  </UCard>
 </template>
 
 <script setup lang="ts">
 import { Badge } from '@/components/ui/badge'
 
 interface Job {
-  id: string
+  id: number
   title: string
-  company: string
   type?: string
   location?: string
   salary_range?: string
@@ -42,6 +41,6 @@ interface Job {
 }
 
 defineProps<{
-  job: Job
+  job: any
 }>()
 </script>
