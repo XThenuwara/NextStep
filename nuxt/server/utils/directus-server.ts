@@ -15,6 +15,9 @@ import {
 	withToken,
 	type QueryFilter,
 	readUser,
+	login,
+	type AuthenticationData,
+	
 } from '@directus/sdk';
 
 const {
@@ -42,5 +45,7 @@ export {
 	aggregate,
 	uploadFiles,
 	readUser,
+	login,
+	type AuthenticationData
 };
 export type { QueryFilter };
