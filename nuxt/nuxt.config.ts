@@ -1,4 +1,4 @@
-import tailwindcss from "@tailwindcss/vite";
+import tailwindcss from '@tailwindcss/vite';
 
 export default defineNuxtConfig({
 	components: [
@@ -6,13 +6,15 @@ export default defineNuxtConfig({
 		{ path: '~/components/block', pathPrefix: false },
 		{ path: '~/components/shared', pathPrefix: false },
 		{ path: '~/components/base', pathPrefix: false },
-		{ path: '~/components/forms', pathPrefix: false },
+		{ path: '~/components/forms', pathPrefix: false }
 	],
 
 	ssr: true,
+
 	future: {
-		compatibilityVersion: 4,
+		compatibilityVersion: 4
 	},
+
 	modules: [
 		'@nuxt/image',
 		'@nuxtjs/seo',
@@ -23,7 +25,8 @@ export default defineNuxtConfig({
 		'shadcn-nuxt',
 		'@nuxt/icon',
 		'@nuxtjs/seo',
-		'@nuxt/ui'
+		'@nuxt/ui',
+		'@sentry/nuxt/module'
 	],
 
 	css: ['~/assets/css/tailwind.css'],
@@ -32,9 +35,9 @@ export default defineNuxtConfig({
 		public: {
 			siteUrl: process.env.NUXT_PUBLIC_SITE_URL as string,
 			directusUrl: process.env.DIRECTUS_URL as string,
-			enableVisualEditing: process.env.NUXT_PUBLIC_ENABLE_VISUAL_EDITING !== 'false',
+			enableVisualEditing: process.env.NUXT_PUBLIC_ENABLE_VISUAL_EDITING !== 'false'
 		},
-		directusServerToken: process.env.DIRECTUS_SERVER_TOKEN,
+		directusServerToken: process.env.DIRECTUS_SERVER_TOKEN
 	},
 
 	shadcn: {
@@ -46,7 +49,7 @@ export default defineNuxtConfig({
 		 * Directory that the component lives in.
 		 * @default "./components/ui"
 		 */
-		componentDir: './app/components/ui',
+		componentDir: './app/components/ui'
 	},
 
 	security: {
@@ -55,9 +58,9 @@ export default defineNuxtConfig({
 				'img-src': ["'self'", 'data:', '*'],
 				'script-src': ["'self'", "'unsafe-inline'", '*'],
 				'connect-src': ["'self'", process.env.DIRECTUS_URL || ''],
-				'frame-ancestors': ["'self'", process.env.DIRECTUS_URL || ''],
-			},
-		},
+				'frame-ancestors': ["'self'", process.env.DIRECTUS_URL || '']
+			}
+		}
 	},
 
 	devtools: { enabled: true },
@@ -68,36 +71,47 @@ export default defineNuxtConfig({
 			directus: {
 				provider: 'directus',
 				options: {
-					baseURL: `${process.env.DIRECTUS_URL}/assets/`,
-				},
+					baseURL: `${process.env.DIRECTUS_URL}/assets/`
+				}
 			},
 			local: {
-				provider: 'ipx',
-			},
-		},
+				provider: 'ipx'
+			}
+		}
 	},
 
 	colorMode: {
 		preference: 'system',
 		classSuffix: '',
-		storage: 'cookie',
+		storage: 'cookie'
 	},
 
 	site: {
-		url: process.env.NUXT_PUBLIC_SITE_URL as string,
+		url: process.env.NUXT_PUBLIC_SITE_URL as string
 	},
+
 	vue: {
-		propsDestructure: true,
+		propsDestructure: true
 	},
 
 	sitemap: {
-		sources: ['/api/sitemap'],
+		sources: ['/api/sitemap']
 	},
 
 	compatibilityDate: '2025-01-16',
-	vite : {
-		plugins: [
-			tailwindcss()
-		]
+
+	vite: {
+		plugins: [tailwindcss()]
 	},
+
+	sentry: {
+		sourceMapsUploadOptions: {
+			org: 'yasas-hansaka-thenuwara',
+			project: 'nextstep-frontend'
+		}
+	},
+
+	sourcemap: {
+		client: 'hidden'
+	}
 });

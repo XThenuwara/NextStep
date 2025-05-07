@@ -1,3 +1,36 @@
+<script setup lang="ts">
+const searchQuery = ref('');
+const selectedType = ref('all');
+const selectedWorkMode = ref('all');
+
+
+export interface JobsResponse {
+  jobs: Job[];
+  status: string;
+}
+// Fetch jobs from the API
+const { data: jobsData, pending, error } = await useFetch<JobsResponse>('/api/jobs/get-jobs');
+console.log("🚀 ~ jobsData:", jobsData)
+
+// Computed property for filtered jobs
+const filteredJobs = computed(() => {
+	if (!jobsData.value?.jobs) return [];
+
+	return jobsData.value.jobs.filter((job: Job) => {
+		const matchesSearch =
+			!searchQuery.value ||
+			job.title.toLowerCase().includes(searchQuery.value.toLowerCase()) ||
+			job.description?.toLowerCase().includes(searchQuery.value.toLowerCase());
+
+		const matchesType = selectedType.value === 'all' || job.type === selectedType.value;
+		const matchesLocation = selectedWorkMode.value === 'all' || job.work_mode === selectedWorkMode.value;
+
+		return matchesSearch && matchesType && matchesLocation;
+	});
+});
+</script>
+
+
 <template>
 	<div class="container mx-auto px-4 py-8">
 		<!-- Header Section -->
@@ -31,7 +64,7 @@
 					/>
 
 					<USelect
-						v-model="selectedLocation"
+						v-model="selectedWorkMode"
 						:items="[
 							{ label: 'All WorkModes', value: 'all' },
 							{ label: 'Remote', value: 'remote' },
@@ -60,28 +93,3 @@
 	</div>
 </template>
 
-<script setup lang="ts">
-const searchQuery = ref('');
-const selectedType = ref('all');
-const selectedLocation = ref('all');
-
-// Fetch jobs from the API
-const { data: jobsData, pending, error } = await useFetch('/api/jobs/get-jobs');
-
-// Computed property for filtered jobs
-const filteredJobs = computed(() => {
-	if (!jobsData.value?.jobs) return [];
-
-	return jobsData.value.jobs.filter((job: Job) => {
-		const matchesSearch =
-			!searchQuery.value ||
-			job.title.toLowerCase().includes(searchQuery.value.toLowerCase()) ||
-			job.description?.toLowerCase().includes(searchQuery.value.toLowerCase());
-
-		const matchesType = selectedType.value === 'all' || job.work_mode === selectedType.value;
-		const matchesLocation = selectedLocation.value === 'all' || job.work_mode === selectedLocation.value;
-
-		return matchesSearch && matchesType && matchesLocation;
-	});
-});
-</script>
