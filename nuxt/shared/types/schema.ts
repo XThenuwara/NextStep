@@ -139,6 +139,7 @@ export interface Job {
 	FromLocation?: string;
 	company?: Company | string | null;
 	category?: Category | string | null;
+	type?: 'full_time' | 'part_time' | 'contract' | null;
 }
 
 export interface Navigation {

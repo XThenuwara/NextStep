@@ -5,11 +5,11 @@ export default defineEventHandler(async (event) => {
     const jobs = await directusServer.request(
       readItems('Jobs', {
         fields: [
-          'id',
-          'title',
-          'description',
-          'company'
-        ],
+          'company.*',
+          'category.*',
+          "*"
+        ] as any,
+        
         sort: ['-date_created']
       })
     );
